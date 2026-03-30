@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LESS — Tu as reçu un défi !</title>
+<meta property="og:title" content="Tu as reçu un défi LESS ! 🔥">
+<meta property="og:description" content="Quelqu'un te défie de réduire ton temps d'écran. Accepte le défi !">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#06060C;color:#F2F2FF;font-family:-apple-system,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.c{max-width:400px;text-align:center;padding:40px 24px}
+.emoji{font-size:64px;margin-bottom:16px}
+.t{font-size:24px;font-weight:900;margin-bottom:8px}
+.s{font-size:15px;color:rgba(242,242,255,.6);line-height:1.6;margin-bottom:32px}
+.btn{display:inline-block;padding:16px 32px;border-radius:14px;font-size:16px;font-weight:800;color:#fff;text-decoration:none;background:linear-gradient(135deg,#FF3B5C,#FF6B35);box-shadow:0 8px 32px rgba(255,59,92,.3)}
+.or{margin:16px 0;font-size:13px;color:rgba(242,242,255,.3)}
+.btn2{display:inline-block;padding:12px 24px;border-radius:12px;font-size:14px;font-weight:700;color:#4FACFE;text-decoration:none;background:rgba(79,172,254,.1);border:1px solid rgba(79,172,254,.2)}
+</style>
+<script>
+// Redirect to app if installed
+window.onload = function() {
+    var code = window.location.pathname.split('/').pop();
+    if (code && code !== 'index.html') {
+        // Try to open in LESS app
+        window.location.href = 'lessapp://defi/' + code;
+        // Fallback to App Store after 1.5s
+        setTimeout(function() {
+            window.location.href = 'https://apps.apple.com/app/less/id6761369242';
+        }, 1500);
+    }
+};
+</script>
+</head>
+<body>
+<div class="c">
+<div class="emoji">🔥</div>
+<div class="t">Tu as reçu un défi !</div>
+<div class="s">Quelqu'un te défie de réduire ton temps d'écran. Télécharge LESS pour accepter et gagner des XP.</div>
+<a href="https://apps.apple.com/app/less/id6761369242" class="btn">Télécharger LESS</a>
+<div class="or">ou</div>
+<a href="javascript:void(0)" onclick="window.location.href='lessapp://defi/'+window.location.pathname.split('/').pop()" class="btn2">Ouvrir dans LESS</a>
+</div>
+</body>
+</html>

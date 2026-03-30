@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LESS — Politique de confidentialité</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#06060C;color:rgba(242,242,255,.7);font-family:-apple-system,sans-serif;padding:40px 24px;line-height:1.8}
+.c{max-width:640px;margin:0 auto}
+h1{color:#F2F2FF;font-size:28px;font-weight:900;margin-bottom:8px}
+h2{color:#F2F2FF;font-size:18px;font-weight:800;margin-top:28px;margin-bottom:8px}
+p{margin-bottom:12px;font-size:14px}
+ul{margin-bottom:12px;padding-left:20px;font-size:14px}
+li{margin-bottom:6px}
+a{color:#4FACFE}
+.back{display:inline-block;margin-bottom:24px;color:#4FACFE;text-decoration:none;font-size:14px;font-weight:600}
+.date{font-size:12px;color:rgba(242,242,255,.3);margin-bottom:24px}
+.highlight{background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.18);border-radius:12px;padding:14px;margin:16px 0}
+.highlight strong{color:#00E5A0}
+</style>
+</head>
+<body>
+<div class="c">
+<a href="/" class="back">← Retour</a>
+<h1>Politique de confidentialité</h1>
+<div class="date">Dernière mise à jour : 30 mars 2026</div>
+
+<div class="highlight">
+<strong>En résumé :</strong> LESS ne collecte aucune donnée personnelle. Tout reste sur ton téléphone.
+</div>
+
+<h2>1. Données collectées</h2>
+<p>LESS collecte le minimum de données nécessaires au fonctionnement :</p>
+<ul>
+<li><strong>Données de temps d'écran :</strong> traitées localement sur votre appareil via les APIs Apple Screen Time. Ces données ne quittent jamais votre téléphone.</li>
+<li><strong>Données de progression :</strong> XP, niveaux, badges, streak — stockées localement via UserDefaults.</li>
+<li><strong>Défis entre amis :</strong> les défis créés sont stockés dans Firebase Firestore avec un identifiant anonyme. Aucun nom, email ou donnée personnelle n'est associé.</li>
+<li><strong>Données d'achat :</strong> traitées par Apple via StoreKit. LESS ne voit pas vos informations de paiement.</li>
+</ul>
+
+<h2>2. Données NON collectées</h2>
+<p>LESS ne collecte PAS :</p>
+<ul>
+<li>Votre nom, email ou numéro de téléphone</li>
+<li>Votre localisation</li>
+<li>Le contenu de vos messages ou notifications</li>
+<li>Vos photos, contacts ou fichiers</li>
+<li>Les noms des applications installées (les APIs Apple utilisent des tokens anonymes)</li>
+</ul>
+
+<h2>3. Stockage des données</h2>
+<p><strong>Local (sur votre appareil) :</strong> toutes les données de progression, paramètres et temps d'écran.</p>
+<p><strong>Firebase (cloud) :</strong> uniquement les défis entre amis, avec un identifiant anonyme généré automatiquement. Serveurs situés en Europe (eur3).</p>
+
+<h2>4. Partage des données</h2>
+<p>LESS ne partage, ne vend et ne transmet aucune donnée à des tiers. Aucun tracker, aucune publicité, aucun SDK analytique tiers.</p>
+
+<h2>5. Sécurité</h2>
+<p>Les communications avec Firebase sont chiffrées via TLS. Les données locales sont protégées par le chiffrement natif d'iOS.</p>
+
+<h2>6. Droits de l'utilisateur (RGPD)</h2>
+<p>Vous pouvez à tout moment :</p>
+<ul>
+<li><strong>Supprimer vos données :</strong> dans Profil → Réinitialiser les données</li>
+<li><strong>Supprimer votre compte :</strong> la suppression de l'app efface toutes les données locales</li>
+<li><strong>Demander l'export :</strong> contactez-nous à contact@lessapp.io</li>
+</ul>
+
+<h2>7. Enfants</h2>
+<p>LESS n'est pas destiné aux enfants de moins de 13 ans. L'application ne collecte pas sciemment de données d'enfants.</p>
+
+<h2>8. Modifications</h2>
+<p>Toute modification de cette politique sera publiée sur cette page. La date de mise à jour sera actualisée.</p>
+
+<h2>9. Contact</h2>
+<p>Pour toute question relative à la confidentialité : contact@lessapp.io</p>
+</div>
+</body>
+</html>
