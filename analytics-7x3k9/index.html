@@ -461,15 +461,13 @@
 // ⚠️ Remplace WEB_APP_ID par ton appId web :
 //    Firebase Console → Project Settings → Your apps → Add web app
 // ══════════════════════════════════════════════════════════════════
-const WEB_APP_ID = "REPLACE_WITH_YOUR_WEB_APP_ID";
-
 const firebaseConfig = {
-  apiKey:            "AIzaSyAn7_2bGKb6xfdFSFWxNfPP8mikJxs6rG8",
+  apiKey:            "AIzaSyB6T9m-fMmQ2rOXhCKjVdiVyN291M5aJuY",
   authDomain:        "less-app-less.firebaseapp.com",
   projectId:         "less-app-less",
   storageBucket:     "less-app-less.firebasestorage.app",
   messagingSenderId: "1039788336356",
-  appId:             WEB_APP_ID
+  appId:             "1:1039788336356:web:841e71cd6f71f262ae38f1"
 };
 
 // Init Firebase
@@ -537,9 +535,6 @@ auth.onAuthStateChanged(user => {
     document.getElementById("login-screen").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
     document.getElementById("user-email").textContent = user.email;
-    if (WEB_APP_ID === "REPLACE_WITH_YOUR_WEB_APP_ID") {
-      document.getElementById("config-notice").style.display = "block";
-    }
     loadDashboard();
   } else {
     // Non connecté ou auth anonyme → login
