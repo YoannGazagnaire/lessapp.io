@@ -1,0 +1,38 @@
+rules_version = '2';
+// ══════════════════════════════════════════════════════════════════
+// LESS — Firestore Security Rules
+//
+// Déployer via :
+//   firebase deploy --only firestore:rules
+//
+// Logique de sécurité :
+//   - challenges       : lecture/écriture pour tout user authentifié (auth anonyme iOS)
+//   - analytics_subscriptions : écriture iOS (auth anonyme), lecture admin uniquement (email/password)
+//   - subscribers      : écriture iOS (son propre doc), lecture admin uniquement
+// ══════════════════════════════════════════════════════════════════
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Défis entre amis (auth anonyme iOS) ─────────────────────
+    match /challenges/{challengeId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // ── Événements d'abonnement ──────────────────────────────────
+    // Écriture : tout user authentifié (iOS anonymous auth)
+    // Lecture  : uniquement les comptes email/password (admin dashboard)
+    match /analytics_subscriptions/{eventId} {
+      allow write: if request.auth != null;
+      allow read:  if request.auth != null && request.auth.token.email != null;
+    }
+
+    // ── État des abonnés ─────────────────────────────────────────
+    // Écriture : l'app iOS ne peut écrire que son propre document
+    // Lecture  : uniquement les comptes email/password (admin dashboard)
+    match /subscribers/{userId} {
+      allow write: if request.auth != null && request.auth.uid == userId;
+      allow read:  if request.auth != null && request.auth.token.email != null;
+    }
+
+  }
+}
